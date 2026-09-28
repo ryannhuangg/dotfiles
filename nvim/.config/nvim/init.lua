@@ -14,6 +14,10 @@ opt.cursorline = true
 opt.splitbelow = true
 opt.splitright = true
 
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
 map("n", "<leader>d", vim.diagnostic.open_float, { desc = "show error diagnostic" })
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "go to prev error" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "go to next error"} )
@@ -44,4 +48,3 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
--- hi!!
