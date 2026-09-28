@@ -19,7 +19,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "lua", "javascript", "typescript", "html", "css", "json"},
+    pattern = { "javascript", "typescript", "html", "css", "json"},
     command = "setlocal tabstop=2 shiftwidth=2"
 })
 
