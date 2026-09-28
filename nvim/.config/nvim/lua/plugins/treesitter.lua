@@ -8,7 +8,7 @@ return {
     end
 
     ts_configs.setup({
-      ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "markdown" },
+      ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "markdown", "java"},
       auto_install = true,
       highlight = {
         enable = true,
