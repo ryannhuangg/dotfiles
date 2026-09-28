@@ -9,8 +9,12 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "L3MON4D3/LuaSnip",
+      "nvim-java/nvim-java", -- Added nvim-java dependency
     },
     config = function()
+      -- Initialize nvim-java BEFORE setting up lspconfig or Mason
+      require("java").setup()
+
       local cmp = require("cmp")
       local cmp_lsp = require("cmp_nvim_lsp")
       local capabilities = cmp_lsp.default_capabilities()
@@ -54,7 +58,7 @@ return {
 
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "pyright" },
+        ensure_installed = { "lua_ls", "pyright", "jdtls" }, -- Added jdtls for auto-installation
         handlers = {
           function(server_name)
             require("lspconfig")[server_name].setup({
@@ -71,6 +75,12 @@ return {
                   },
                 },
               },
+            })
+          end,
+          ["jdtls"] = function()
+            -- Specific handler to pass cmp capabilities to the Java LSP
+            require("lspconfig").jdtls.setup({
+              capabilities = capabilities,
             })
           end,
         },
