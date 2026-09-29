@@ -22,16 +22,14 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = { "javascript", "typescript", "html", "css", "json"},
     command = "setlocal tabstop=2 shiftwidth=2"
 })
-
+--error viewing
 map("n", "<leader>d", vim.diagnostic.open_float, { desc = "show error diagnostic" })
-map("n", "[d", vim.diagnostic.goto_prev, { desc = "go to prev error" })
-map("n", "]d", vim.diagnostic.goto_next, { desc = "go to next error"} )
-
-
-map("n", "<C-h>", "<C-w>h", { desc = "Focus left window" })
-map("n", "<C-j>", "<C-w>j", { desc = "Focus lower window" })
-map("n", "<C-k>", "<C-w>k", { desc = "Focus upper window" })
-map("n", "<C-l>", "<C-w>l", { desc = "Focus right window" })
+map("n", "<leader>[", vim.diagnostic.goto_prev, { desc = "go to prev error" })
+map("n", "<leader>]", vim.diagnostic.goto_next, { desc = "go to next error"} )
+--save
+map("n", "<leader>s", ":wa")
+--split
+map("n", "<leader>v", ":vsplit")
 
 map("n", "<leader>sv", "<cmd>vsplit<CR>", { desc = "Split window vertically" })
 map("n", "<leader>sh", "<cmd>split<CR>", { desc = "Split window horizontally" })
