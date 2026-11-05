@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="ys"
+ZSH_THEME="ryan"
 
 zstyle ':omz:update' mode auto
 
