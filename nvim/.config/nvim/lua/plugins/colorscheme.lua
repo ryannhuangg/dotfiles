@@ -1,12 +1,10 @@
 return {
-    "folke/tokyonight.nvim",
-    lazy = false, 
+    "rebelot/kanagawa.nvim",
+    lazy = false,
     priority = 1000,
     config = function()
-
         vim.opt.termguicolors = true
-
-
-        vim.cmd.colorscheme("tokyonight-night")
+        vim.cmd.colorscheme("kanagawa")
     end,
 }
+

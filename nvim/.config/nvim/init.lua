@@ -27,9 +27,9 @@ map("n", "<leader>d", vim.diagnostic.open_float, { desc = "show error diagnostic
 map("n", "<leader>[", vim.diagnostic.goto_prev, { desc = "go to prev error" })
 map("n", "<leader>]", vim.diagnostic.goto_next, { desc = "go to next error"} )
 --save
-map("n", "<leader>s", ":wa")
+map("n", "<leader>s", ":wa<CR>")
 --split
-map("n", "<leader>v", ":vsplit")
+map("n", "<leader>v", ":vsplit<CR>")
 
 map("n", "<leader>sv", "<cmd>vsplit<CR>", { desc = "Split window vertically" })
 map("n", "<leader>sh", "<cmd>split<CR>", { desc = "Split window horizontally" })
